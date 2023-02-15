@@ -16,7 +16,7 @@ function calculate() {
   var resultOutput = weight.value / (height.value * height.value)
   console.log(resultOutput)
 
-  if (isNaN(resultOutput)) {
+  if (isNaN(resultOutput) || !isFinite(resultOutput)) {
     //resultInput.value = ""
     return
   } else {
@@ -24,7 +24,7 @@ function calculate() {
   }
 
   if (resultInput.value.length === 2) {
-    resultInput.style.width = "45px"
+    resultInput.style.width = "50px"
   } else if (resultInput.value.length === 3) {
       resultInput.style.width = "60px"
   } else {
