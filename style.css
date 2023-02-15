@@ -1,0 +1,525 @@
+body {
+  font-family: "Poppins";
+  background-color: #FAF7F0;
+  background: radial-gradient(circle, transparent 20%, #FAF7F0 20%, #FAF7F0 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #FAF7F0 20%, #FAF7F0 80%, transparent 80%, transparent) 27.5px 27.5px, linear-gradient(rgba(73, 90, 178, 0.5) 2.2px, transparent 2.2px) 0 -1.1px, linear-gradient(90deg, rgba(73, 90, 178, 0.5) 2.2px, #FAF7F0 2.2px) -1.1px 0;
+  background-size: 55px 55px, 55px 55px, 27.5px 27.5px, 27.5px 27.5px;
+}
+
+@media screen and (max-width: 550px) {
+  .layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+  }
+  
+  .calculator {
+    display: flex;
+    justify-content: center;
+
+    width: 300px;
+    height: 430px;
+
+    padding: 10px 20px;
+    border-radius: 14px;
+    background: #BCCEF8;
+
+    box-shadow: 0 0px 14px rgba(0, 0, 0, 0.3);
+
+    transition: 1s all;
+  }
+
+  .allBoxes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  }
+
+  .h1Box {
+    width: auto;
+  }
+
+  h1 {
+    font-size: 49px;
+    color: #FAF7F0;
+    font-weight: 600;
+    text-shadow: 0 0 7px #495ab2;
+  }
+
+  .measures {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .weight, .height {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 22px;
+
+    background: #FAF7F0;
+
+    border-radius: 7px;
+
+    width: 250px;
+    padding: 10px;
+
+    box-shadow: 0 0 14px rgba(73, 90, 178, 0.5);
+
+    transition: 0.5s all;
+  }
+
+  .weight:hover, .height:hover {
+    transform: scale(1.05);
+  }
+
+  .weight, .height p {
+    color: #495ab2;
+    font-weight: 600;
+  }
+
+  .weightInput, .heightInput {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .measureInput {
+    border-radius: 5px;
+    border: 3px solid rgb(73, 90, 178, 0.3);
+    outline: none;
+
+    font-size: 35px;
+    font-family: 'Poppins';
+    color: #495ab2;
+    font-weight: 600;
+
+    padding: 10px;
+
+    height: 35px;
+    width: 90px;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+  input[type=number] {
+      appearance:textfield;
+  }
+
+  .metricAbbreviation {
+    font-size: 40px;
+    font-weight: 600;
+  }
+
+  .calculatorButton {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+    margin: 10px;
+  }
+
+  button {
+    width: 120px;
+    height: 50px;
+
+    background: #495ab2;
+
+    font-family: 'Poppins';
+    font-size: 21px;
+    font-weight: 600;
+    color: #FAF7F0;
+
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 14px rgba(73, 90, 178, 0.5);
+
+    transition: 0.5s all;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+    background: #BCCEF8;
+    color: #495ab2;
+    border: 3px solid #495ab2;
+  }
+
+  .result {
+    display: none;
+    flex-direction: column;
+    visibility: hidden;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    opacity: 0;
+  }
+
+  .resultBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    width: 180px;
+    height: 90px;
+
+    padding: 10px;
+
+    background: #FAF7F0;
+    border-radius: 5px;
+    box-shadow: 0 0 14px rgba(73, 90, 178, 0.5);
+  }
+
+  .result p {
+    font-size: 19px;
+    font-weight: 400;
+    text-align: center;
+
+    color: #495ab2;
+  }
+
+  .resultBMI {
+    outline: none;
+    border: none;
+
+    background: #FAF7F0;
+
+    width: 85px;
+
+    font-size: 42px;
+    font-weight: 600;
+
+    color: #495ab2;
+
+    
+  }
+
+  .tableBmi {
+    display: flex;
+    justify-content: center;
+  }
+
+  table {
+    border-collapse: separate;
+    
+    border-radius: 5px;
+    border: 2px solid #495ab2;
+
+    box-shadow: 0 0 14px rgba(73, 90, 178, 0.5);
+  }
+
+  th {
+    background: #495ab2;
+
+    text-align: center;
+    font-weight: 600;
+    color: #FAF7F0;
+
+    padding: 7px;
+  }
+
+  td {
+    background: #FAF7F0;
+
+    text-align: center;
+    font-weight: 400;
+    color: #495ab2;
+
+    border: 1px solid #495ab2;
+
+    padding: 7px;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+}
+
+.calculator {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+
+  width: 480px;
+  height: 270px;
+
+  padding: 20px;
+  border-radius: 14px;
+  background: #BCCEF8;
+
+  box-shadow: 0 0px 14px rgba(0, 0, 0, 0.3);
+
+  transition: 1s all;
+}
+
+.allBoxes {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.h1Box {
+  width: auto;
+}
+
+h1 {
+  font-size: 47px;
+  color: #FAF7F0;
+  font-weight: 600;
+
+  text-shadow: 0 0 7px #495ab2;
+}
+
+.measures {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+.weight, .height {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  background: #FAF7F0;
+
+  border-radius: 7px;
+
+  width: 180px;
+  padding: 10px;
+
+  box-shadow: 0 0 14px rgba(73, 90, 178, 0.5);
+
+  transition: 0.5s all;
+}
+
+.weight:hover, .height:hover {
+  transform: scale(1.05);
+}
+
+.weight, .height p {
+  color: #495ab2;
+  font-weight: 600;
+}
+
+.weightInput, .heightInput {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.measureInput {
+  border-radius: 5px;
+  border: 3px solid rgb(73, 90, 178, 0.3);
+  outline: none;
+
+  font-size: 35px;
+  font-family: 'Poppins';
+  color: #495ab2;
+  font-weight: 600;
+
+  padding: 10px;
+
+  height: 35px;
+  width: 90px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    appearance:textfield;
+}
+
+.metricAbbreviation {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.calculatorButton {
+  display: flex;
+  justify-content: center;
+  gap: 21px;
+}
+
+button {
+  width: 150px;
+  height: 50px;
+
+  background: #495ab2;
+
+  font-family: 'Poppins';
+  font-size: 21px;
+  font-weight: 600;
+  color: #FAF7F0;
+
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 14px rgba(73, 90, 178, 0.5);
+
+  transition: 0.5s all;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: #BCCEF8;
+  color: #495ab2;
+  border: 3px solid #495ab2;
+}
+
+.result {
+  display: none;
+  visibility: hidden;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+
+  opacity: 0;
+}
+
+.resultBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+
+  width: 180px;
+  height: 90px;
+
+  padding: 10px;
+
+  background: #FAF7F0;
+  border-radius: 5px;
+  box-shadow: 0 0 14px rgba(73, 90, 178, 0.5);
+}
+
+.result p {
+  font-size: 19px;
+  font-weight: 400;
+  text-align: center;
+
+  color: #495ab2;
+}
+
+.resultBMI {
+  outline: none;
+  border: none;
+
+  background: #FAF7F0;
+
+  width: 85px;
+
+  font-size: 42px;
+  font-weight: 600;
+
+  color: #495ab2;
+
+  
+}
+
+.tableBmi {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  border-collapse: separate;
+  
+  border-radius: 5px;
+  border: 2px solid #495ab2;
+
+  box-shadow: 0 0 14px rgba(73, 90, 178, 0.5);
+}
+
+th {
+  background: #495ab2;
+
+  text-align: center;
+  font-weight: 600;
+  color: #FAF7F0;
+
+  padding: 7px;
+}
+
+td {
+  background: #FAF7F0;
+
+  text-align: center;
+  font-weight: 400;
+  color: #495ab2;
+
+  border: 1px solid #495ab2;
+
+  padding: 7px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+}
+
+
