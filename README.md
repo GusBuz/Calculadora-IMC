@@ -17,4 +17,4 @@ O projeto foi feito utilizando HTML, CSS e Javascript. Além disso, utilizei um 
 - Magic Pattern - [AQUI](https://www.magicpattern.design/)
 
 ## 🔍 Preview
-Clique [aqui]() para acessar o projeto.
+Clique [aqui](https://gusbuz.github.io/Calculadora-IMC/) para acessar o projeto.

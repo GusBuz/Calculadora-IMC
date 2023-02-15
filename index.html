@@ -112,7 +112,7 @@
       </div>
     </main>
     <script>
-        $("#weightKg").mask("000.0");
+        $("#weightKg").mask("ZZZ.Z", {translation:  {'Z': {pattern: /[0-9]/, optional: true}}});
         $("#heightM").mask("0.00");
     </script>
     <script src="./script.js"></script>

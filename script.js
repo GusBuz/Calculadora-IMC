@@ -23,6 +23,15 @@ function calculate() {
     resultInput.value = Math.round(resultOutput * 10) / 10
   }
 
+  if (resultInput.value.length === 2) {
+    resultInput.style.width = "45px"
+  } else if (resultInput.value.length === 3) {
+      resultInput.style.width = "60px"
+  } else {
+    resultInput.style.width = "85px"
+  }
+  
+
   classifications.forEach((element) => {
     element.style.background = "#FAF7F0"
   })
